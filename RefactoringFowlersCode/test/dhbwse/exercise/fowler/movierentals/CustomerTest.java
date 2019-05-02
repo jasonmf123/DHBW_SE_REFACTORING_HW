@@ -1,4 +1,4 @@
-package dhbwse.exercise.fowler.movieRentals;
+package dhbwse.exercise.fowler.movierentals;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.util.StringUtils;
+
+import dhbwse.exercise.fowler.movierentals.ChildrensPrice;
+import dhbwse.exercise.fowler.movierentals.Customer;
+import dhbwse.exercise.fowler.movierentals.Movie;
+import dhbwse.exercise.fowler.movierentals.NewReleasePrice;
+import dhbwse.exercise.fowler.movierentals.RegularPrice;
+import dhbwse.exercise.fowler.movierentals.Rental;
 
 class CustomerTest {
 	

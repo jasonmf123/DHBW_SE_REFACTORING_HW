@@ -1,4 +1,4 @@
-package dhbwse.exercise.fowler.movieRentals;
+package dhbwse.exercise.fowler.movierentals;
 
 class Rental {
 	private Movie movie;

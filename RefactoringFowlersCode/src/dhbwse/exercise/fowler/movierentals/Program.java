@@ -1,4 +1,4 @@
-package dhbwse.exercise.fowler.movieRentals;
+package dhbwse.exercise.fowler.movierentals;
 
 /**
  * Note that Java console applications need to be run through the java runtime

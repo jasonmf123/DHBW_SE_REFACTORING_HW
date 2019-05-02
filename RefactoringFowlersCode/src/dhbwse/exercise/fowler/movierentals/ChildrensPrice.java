@@ -1,13 +1,12 @@
-package dhbwse.exercise.fowler.movieRentals;
+package dhbwse.exercise.fowler.movierentals;
 
-class RegularPrice extends Price {
-
+class ChildrensPrice extends Price {
 	@Override
 	double calculateBillingAmount(int daysRented) {
 		double calculatedAmount = 0;
-		calculatedAmount += 2;
-		if (daysRented > 2)
-			{calculatedAmount += (daysRented - 2) * 1.5;}
+		calculatedAmount += 1.5;
+		if (daysRented > 3) {
+			calculatedAmount += (daysRented - 3) * 1.5;}
 		return calculatedAmount;
 	}
 
