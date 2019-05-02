@@ -25,14 +25,12 @@ class Customer {
 		result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
 
 		for (Rental rental : rentals) {
-			double thisAmount = 0;
-			// determine amounts for each line
-			thisAmount = rental.calculateBillingAmount();
+			
 			frequentRenterPoints += calculateFrequentRenterPointsFor(rental);
 			// show figures for this rental
 			result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t"
-					+ String.valueOf(thisAmount) + "\n";
-			totalAmount += thisAmount;
+					+ String.valueOf(rental.calculateBillingAmount()) + "\n";
+			totalAmount += rental.calculateBillingAmount();;
 		}
 		// add footer lines
 		result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
