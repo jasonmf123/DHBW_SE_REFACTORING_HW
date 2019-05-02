@@ -26,7 +26,7 @@ class Rental {
 				+ String.valueOf(this.calculateBillingAmount()) + "\n";
 	}
 	
-	public int calculateFrequentRenterPointsFor() {
+	public int calculateGainedFrequentRenterPoints() {
 		return this.getMovie().getPriceCode().calculateFrequentRenterPoints(this.getDaysRented());
 	}
 	
