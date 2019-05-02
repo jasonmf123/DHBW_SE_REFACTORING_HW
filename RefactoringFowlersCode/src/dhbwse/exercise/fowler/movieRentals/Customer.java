@@ -1,31 +1,28 @@
 package dhbwse.exercise.fowler.movieRentals;
 
 
-import java.lang.*;
-import java.util.*;
+import java.util.ArrayList;
 
 class Customer {
     private String name;
-    private Vector rentals = new Vector();
+    private ArrayList<Rental> rentals = new ArrayList<Rental>();
     public Customer (String newname){
         name = newname;
     };
     public void addRental(Rental arg) {
-        rentals.addElement(arg);
+        rentals.add(arg);
     };
     public String getName (){
         return name;
     };
     public String statement() {
         double totalAmount = 0;
-        int frequentRenterPoints = 0;
-        Enumeration enum_rentals = rentals.elements();	    
+        int frequentRenterPoints = 0;   
         String result = "Rental Record for " + this.getName() + "\n";
         result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
 
-        while (enum_rentals.hasMoreElements()) {
+        for(Rental each: rentals) {
             double thisAmount = 0;
-            Rental each = (Rental) enum_rentals.nextElement();
             //determine amounts for each line
             thisAmount = amountFor(each);
             // add frequent renter points
