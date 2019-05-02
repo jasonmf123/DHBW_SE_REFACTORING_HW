@@ -37,5 +37,20 @@ class Rental {
 		return calculatedAmount;
 	}
 	
+	public String printBillingLineForRental() {
+		return "\t" + this.getMovie().getTitle() + "\t" + "\t" + this.getDaysRented() + "\t"
+				+ String.valueOf(this.calculateBillingAmount()) + "\n";
+	}
+	
+	public int calculateFrequentRenterPointsFor() {
+		int additionalFrequentRenterPoints = 0;
+		// add frequent renter points
+		additionalFrequentRenterPoints++;
+		// add bonus for a two day new release rental
+		if ((this.getMovie().getPriceCode() == Movie.NEW_RELEASE) && this.getDaysRented() > 1)
+			additionalFrequentRenterPoints++;
+		return additionalFrequentRenterPoints;
+	}
+	
 	
 }
