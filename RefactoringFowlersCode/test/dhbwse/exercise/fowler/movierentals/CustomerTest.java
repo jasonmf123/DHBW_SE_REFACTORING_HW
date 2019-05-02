@@ -16,12 +16,11 @@ import dhbwse.exercise.fowler.movierentals.RegularPrice;
 import dhbwse.exercise.fowler.movierentals.Rental;
 
 class CustomerTest {
-	
+
 	Customer customer;
 	List<Rental> rentals;
-	
-	static List<Rental> createTestRentals() 
-	{
+
+	static List<Rental> createTestRentals() {
 		List<Rental> rentals = new ArrayList<Rental>(3);
 		rentals.add(new Rental(new Movie("The Tester", new RegularPrice()), 5));
 		rentals.add(new Rental(new Movie("The Tester 2", new NewReleasePrice()), 5));
@@ -38,13 +37,11 @@ class CustomerTest {
 
 	@Test
 	void testCreateBillExpectSuccess() {
-		String expectedBill = StringUtils.replaceWhitespaceCharacters("Rental Record for Test Customer\r\n" + 
-				"\tTitle\t\tDays\tAmount\r\n" + 
-				"\tThe Tester\t\t5\t6.5\r\n" + 
-				"\tThe Tester 2\t\t5\t15.0\r\n" + 
-				"\tThe Tester 4 Kids\t\t10\t12.0\r\n" + 
-				"Amount owed is 33.5\r\n" + 
-				"You earned 4 frequent renter points","");
+		String expectedBill = StringUtils.replaceWhitespaceCharacters(
+				"Rental Record for Test Customer\r\n" + "\tTitle\t\tDays\tAmount\r\n" + "\tThe Tester\t\t5\t6.5\r\n"
+						+ "\tThe Tester 2\t\t5\t15.0\r\n" + "\tThe Tester 4 Kids\t\t10\t12.0\r\n"
+						+ "Amount owed is 33.5\r\n" + "You earned 4 frequent renter points",
+				"");
 		String actualBill = StringUtils.replaceWhitespaceCharacters(customer.createBill(), "");
 		Assertions.assertEquals(expectedBill, actualBill);
 	}

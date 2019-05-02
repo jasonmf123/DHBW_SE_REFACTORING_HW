@@ -1,6 +1,6 @@
 package dhbwse.exercise.fowler.movierentals;
 
-class NewReleasePrice extends Price {
+public class NewReleasePrice extends Price {
 
 	@Override
 	double calculateBillingAmount(int daysRented) {
@@ -9,7 +9,7 @@ class NewReleasePrice extends Price {
 
 	@Override
 	int calculateFrequentRenterPoints(int daysRented) {
-		return daysRented>1 ?  2 :  1;
+		return daysRented > 1 ? 2 : 1;
 	}
-	
+
 }

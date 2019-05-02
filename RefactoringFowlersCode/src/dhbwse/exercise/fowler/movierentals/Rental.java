@@ -1,6 +1,6 @@
 package dhbwse.exercise.fowler.movierentals;
 
-class Rental {
+public class Rental {
 	private Movie movie;
 	private int daysRented;
 
@@ -16,19 +16,18 @@ class Rental {
 	public Movie getMovie() {
 		return movie;
 	}
-	
+
 	public double calculateBillingAmount() {
 		return this.getMovie().getPriceCode().calculateBillingAmount(this.getDaysRented());
 	}
-	
+
 	public String printBillingLineForRental() {
 		return "\t" + this.getMovie().getTitle() + "\t" + "\t" + this.getDaysRented() + "\t"
 				+ String.valueOf(this.calculateBillingAmount()) + "\n";
 	}
-	
+
 	public int calculateGainedFrequentRenterPoints() {
 		return this.getMovie().getPriceCode().calculateFrequentRenterPoints(this.getDaysRented());
 	}
-	
-	
+
 }

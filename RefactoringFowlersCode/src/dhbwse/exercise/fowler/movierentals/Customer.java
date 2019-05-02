@@ -27,7 +27,7 @@ public class Customer {
 			// show figures for this rental
 			result += rental.printBillingLineForRental();
 		}
-		
+
 		// add footer lines
 		result += "Amount owed is " + String.valueOf(calculateTotalBillingAmount()) + "\n";
 		result += "You earned " + String.valueOf(calculateTotalFrequentRenterPoints()) + " frequent renter points";
