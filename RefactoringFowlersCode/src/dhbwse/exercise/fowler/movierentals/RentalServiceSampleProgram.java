@@ -5,7 +5,7 @@ package dhbwse.exercise.fowler.movierentals;
  * by running "java -jar JarFile.jar" in the command line. Java console
  * applications can not be previewed in the Compiler IDE, only applets can.
  */
-public class Program {
+public class RentalServiceSampleProgram {
 	/**
 	 * This is the main entry point for the application
 	 */
