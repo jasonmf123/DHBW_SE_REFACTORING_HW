@@ -16,9 +16,9 @@ class CustomerTest {
 	static List<Rental> createTestRentals() 
 	{
 		List<Rental> rentals = new ArrayList<Rental>(3);
-		rentals.add(new Rental(new Movie("The Tester", 0), 5));
-		rentals.add(new Rental(new Movie("The Tester 2", 1), 5));
-		rentals.add(new Rental(new Movie("The Tester 4 Kids", 2), 10));
+		rentals.add(new Rental(new Movie("The Tester", new RegularPrice()), 5));
+		rentals.add(new Rental(new Movie("The Tester 2", new NewReleasePrice()), 5));
+		rentals.add(new Rental(new Movie("The Tester 4 Kids", new ChildrensPrice()), 10));
 		return rentals;
 	}
 
