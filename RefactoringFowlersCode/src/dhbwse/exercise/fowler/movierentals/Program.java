@@ -11,17 +11,19 @@ public class Program {
 	 */
 
 	public static void main(String args[]) {
-		String result;
 		System.out.println("Welcome to the Movie Store");
-		Movie m1 = new Movie("movie1", new NewReleasePrice());
-		Movie m2 = new Movie("movie2", new ChildrensPrice());
-		Rental r1 = new Rental(m1, 10);
-		Rental r2 = new Rental(m2, 5);
-		Customer c1 = new Customer("joe");
-		c1.addRental(r1);
-		c1.addRental(r2);
 		System.out.println("Let's get the Statement");
-		result = c1.createBill();
-		System.out.println(result);
+		System.out.println("----------------------------------");
+		System.out.println(generareSampleData().createBill());
+		System.out.println("----------------------------------");
+	}
+
+	private static Customer generareSampleData() {
+		Movie movie1 = new Movie("movie1", new NewReleasePrice());
+		Movie movie2 = new Movie("movie2", new ChildrensPrice());
+		Customer customer = new Customer("Joe");
+		customer.addRental(new Rental(movie1, 10));
+		customer.addRental(new Rental(movie2, 5));
+		return customer;
 	}
 }
