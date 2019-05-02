@@ -28,14 +28,18 @@ class Customer {
 			
 			frequentRenterPoints += calculateFrequentRenterPointsFor(rental);
 			// show figures for this rental
-			result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t"
-					+ String.valueOf(rental.calculateBillingAmount()) + "\n";
+			result += printBillingLineForRental(rental);
 			totalAmount += rental.calculateBillingAmount();;
 		}
 		// add footer lines
 		result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
 		result += "You earned " + String.valueOf(frequentRenterPoints) + " frequent renter points";
 		return result;
+	}
+
+	private String printBillingLineForRental(Rental rental) {
+		return "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t"
+				+ String.valueOf(rental.calculateBillingAmount()) + "\n";
 	}
 
 	private int calculateFrequentRenterPointsFor(Rental rental) {
